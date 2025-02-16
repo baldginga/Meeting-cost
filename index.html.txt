@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Cost Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .container h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .container input {
+            margin-top: 10px;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .container button {
+            margin-top: 10px;
+            padding: 10px;
+            width: 100%;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .container button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Meeting Cost Calculator</h1>
+        <input type="number" id="numPeople" placeholder="Number of People">
+        <input type="number" id="hourlyRate" placeholder="Hourly Rate per Person">
+        <button onclick="calculateCost()">Calculate Cost</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        function calculateCost() {
+            const numPeople = document.getElementById('numPeople').value;
+            const hourlyRate = document.getElementById('hourlyRate').value;
+            const cost = numPeople * hourlyRate;
+            document.getElementById('result').innerText = 'Total Meeting Cost: $' + cost;
+        }
+    </script>
+</body>
+</html>
